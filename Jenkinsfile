@@ -29,8 +29,7 @@ pipeline {
          
           stage('Monitor') {
              steps {
-                  sh 'url =$(sh \'JENKINS_URL/job/${pipeline1-1}\') '
-        //    sh '''url=\'http://18.191.148.9:8080/rpps\'
+                    sh '''url=\'http://18.191.148.9:8080/rpps\'
 code=`curl -sL --connect-timeout 20 --max-time 30 -w "%{http_code}\\\\n" "$url" -o /dev/null`'''
                  
                
