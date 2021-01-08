@@ -19,14 +19,15 @@ pipeline {
                // bat "mvn -Dmaven.test.failure.ignore=true clean install"
             }
 
-            post {
+             stage("deploy-dev"){
+       steps{
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                 success {
                        sshagent(['tomcat-dev']){
                            sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user@172.31.41.47:/usr/share/tomcat/webapps/'
                        }
-                }
+                }}
             }
         }
     }
