@@ -23,13 +23,13 @@ pipeline {
         }
          stage('Deploy') {
              steps {
-             deploy adapters: [tomcat9(credentialsId: 'c4046d3f-d8d7-4771-9691-9d929fa08e9d', path: '', url: 'http://http://3.133.84.113/:8080/')], contextPath: 'rpps', war: '**/*.war'
+             deploy adapters: [tomcat9(credentialsId: 'c4046d3f-d8d7-4771-9691-9d929fa08e9d', path: '', url: 'http://http://3.133.84.113:8080/')], contextPath: 'rpps', war: '**/*.war'
              }
          }
          
           stage('Monitor') {
              steps {
-                    sh '''url=\'http://http://3.133.84.113/:8080/rpps\'
+                    sh '''url=\'http://http://3.133.84.113:8080/rpps\'
 code=`curl -sL --connect-timeout 20 --max-time 30 -w "%{http_code}\\\\n" "$url" -o /dev/null`'''
                  
                
