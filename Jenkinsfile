@@ -15,7 +15,7 @@ pipeline {
                  sh 'rm -f main'
                  sh 'mkdir main'
                  sh 'touch main/vars.html'
-                 sh 'echo "1.0"> main/vars.html'
+                 sh 'echo "Test Version: 1.0"> main/vars.html'
 
                 // Run Maven on a Unix agent.
               sh "mvn clean package"
