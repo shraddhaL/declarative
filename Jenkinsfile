@@ -11,6 +11,11 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git branch: 'patch-1', url:'https://github.com/cameronmcnz/rock-paper-scissors.git'
+                
+                 sh 'rm -f main'
+                 sh 'mkdir main'
+                 sh 'touch main/vars.html'
+                 sh 'echo "1.0"> main/vars.html'
 
                 // Run Maven on a Unix agent.
               sh "mvn clean package"
@@ -29,6 +34,10 @@ pipeline {
          
           stage('Monitor') {
              steps {
+                 
+                  sh 'test -f main/vars.html'
+                  sh 'grep "1.0" main/vars.html'
+                 
                     sh '''url=\'http://localhost:8080/rpps\'
 code=`curl -sL --connect-timeout 20 --max-time 30 -w "%{http_code}\\\\n" "$url" -o /dev/null`'''
                  
