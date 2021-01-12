@@ -12,7 +12,7 @@ pipeline {
                 // Get some code from a GitHub repository
                 git branch: 'patch-1', url:'https://github.com/cameronmcnz/rock-paper-scissors.git'
                 
-                 sh 'rm -f main'
+                 sh 'rm -rf main'
                  sh 'mkdir main'
                  sh 'touch main/vars.html'
                  sh 'echo "Test Version: 1.0"> main/vars.html'
