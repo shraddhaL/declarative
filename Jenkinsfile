@@ -26,7 +26,7 @@ pipeline {
 println "Random UUID: "+uuid
 println "UUID Variant: "+uuid.variant()
 println "UUID Version: "+uuid.version()
-sh 'echo uuid.version()> main/vars.html'
+//sh 'echo uuid.version()> main/vars.html'
                 
                //  sh 'echo "Test Version: 1.0"> main/vars.html'
 
