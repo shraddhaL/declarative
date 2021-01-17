@@ -21,9 +21,9 @@ pipeline {
                  sh 'mkdir main'
                  sh 'touch main/vars.html'
               // def  unique_Id = UUID.randomUUID().toString()
-                 sh 'curl $unique_Id'
+                // sh 'curl $unique_Id'
              
-//sh 'println "Random UUID: "+uuid'
+sh 'println "Random UUID: "+uuid'
  //               sh 'println "UUID Variant: "+uuid.variant()'
 //sh 'println "UUID Version: "+uuid.version()'
             //    sh 'def verCode =uuid.version()'
