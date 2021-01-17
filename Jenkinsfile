@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        unique_Id = UUID.randomUUID().toString()
+       // unique_Id = UUID.randomUUID().toString()
           UUID uuid = UUID.randomUUID()
     }
 
@@ -24,8 +24,8 @@ pipeline {
                 // sh 'curl $unique_Id'
              
 println "Random UUID: "+uuid
-println "UUID Version: "+unique_Id.version()
-//sh 'echo uuid.version()> main/vars.html'
+//println "UUID Version: "+uuid.version()
+sh 'echo uuid.version()> main/vars.html'
                 
                //  sh 'echo "Test Version: 1.0"> main/vars.html'
 
