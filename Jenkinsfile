@@ -24,8 +24,7 @@ pipeline {
                 // sh 'curl $unique_Id'
              
 println "Random UUID: "+uuid
-//println "UUID Version: "+uuid.version()
-sh 'echo uuid.version()> main/vars.html'
+sh 'echo $uuid> main/vars.html'
                 
                //  sh 'echo "Test Version: 1.0"> main/vars.html'
 
@@ -48,7 +47,7 @@ sh 'echo uuid.version()> main/vars.html'
              steps {
                  
                   sh 'test -f main/vars.html'
-                  sh 'grep $verCode main/vars.html'
+                  sh 'grep $uuid main/vars.html'
                  
                     sh '''url=\'http://localhost:8080/rpps\'
 code=`curl -sL --connect-timeout 20 --max-time 30 -w "%{http_code}\\\\n" "$url" -o /dev/null`'''
