@@ -16,11 +16,11 @@ pipeline {
                  sh 'mkdir main'
                  sh 'touch main/vars.html'
                 
-                UUID uuid = UUID.randomUUID()
-println "Random UUID: "+uuid
-println "UUID Variant: "+uuid.variant()
-println "UUID Version: "+uuid.version()
-                def verCode =uuid.version()
+               sh 'UUID uuid = UUID.randomUUID()'
+sh 'println "Random UUID: "+uuid'
+                sh 'println "UUID Variant: "+uuid.variant()'
+sh 'println "UUID Version: "+uuid.version()'
+                sh 'def verCode =uuid.version()'
                 sh 'echo $verCode> main/vars.html'
                 
                //  sh 'echo "Test Version: 1.0"> main/vars.html'
