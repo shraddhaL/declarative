@@ -1,5 +1,11 @@
 pipeline {
     agent any
+     agent any
+
+    environment {
+        unique_Id = UUID.randomUUID().toString()
+          UUID uuid = UUID.randomUUID()
+    }
 
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
@@ -15,9 +21,9 @@ pipeline {
                  sh 'rm -rf main'
                  sh 'mkdir main'
                  sh 'touch main/vars.html'
-               def  unique_Id = UUID.randomUUID().toString()
+              // def  unique_Id = UUID.randomUUID().toString()
                  sh 'curl $unique_Id'
-               UUID uuid = UUID.randomUUID()
+             
 sh 'println "Random UUID: "+uuid'
                 sh 'println "UUID Variant: "+uuid.variant()'
 sh 'println "UUID Version: "+uuid.version()'
