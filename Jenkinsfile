@@ -48,10 +48,10 @@ sh 'echo $uuid> main/vars.html'
                  
                   sh 'test -f main/vars.html'
                   
-                 
-                 if(sh 'grep $uuid main/vars.html'==uuid)
+                 uuid_1=sh 'grep $uuid main/vars.html'
+                 if(uuid_1==uuid)
                  {
-                  println uuid
+                  println "updated"
                  }
                     sh '''url=\'http://localhost:8080/rpps\'
 code=`curl -sL --connect-timeout 20 --max-time 30 -w "%{http_code}\\\\n" "$url" -o /dev/null`'''
