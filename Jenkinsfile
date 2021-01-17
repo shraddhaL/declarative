@@ -15,8 +15,9 @@ pipeline {
                  sh 'rm -rf main'
                  sh 'mkdir main'
                  sh 'touch main/vars.html'
-                
-               sh 'UUID uuid = UUID.randomUUID()'
+                unique_Id = UUID.randomUUID().toString()
+                 sh 'curl $unique_Id'
+               UUID uuid = UUID.randomUUID()
 sh 'println "Random UUID: "+uuid'
                 sh 'println "UUID Variant: "+uuid.variant()'
 sh 'println "UUID Version: "+uuid.version()'
