@@ -1,6 +1,5 @@
 pipeline {
     agent any
-     agent any
 
     environment {
         unique_Id = UUID.randomUUID().toString()
