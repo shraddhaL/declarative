@@ -24,10 +24,10 @@ pipeline {
                 // sh 'curl $unique_Id'
              
 println "Random UUID: "+uuid
- //               sh 'println "UUID Variant: "+uuid.variant()'
-//sh 'println "UUID Version: "+uuid.version()'
-            //    sh 'def verCode =uuid.version()'
-             //   sh 'echo $verCode> main/vars.html'
+println "UUID Variant: "+uuid.variant()
+println "UUID Version: "+uuid.version()
+def verCode =uuid.version()
+echo $verCode> main/vars.html
                 
                //  sh 'echo "Test Version: 1.0"> main/vars.html'
 
