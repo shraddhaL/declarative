@@ -24,7 +24,6 @@ pipeline {
                 // sh 'curl $unique_Id'
              
 println "Random UUID: "+uuid
-println "UUID Variant: "+uuid.variant()
 println "UUID Version: "+uuid.version()
 //sh 'echo uuid.version()> main/vars.html'
                 
