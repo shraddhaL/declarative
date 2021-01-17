@@ -23,7 +23,7 @@ pipeline {
               // def  unique_Id = UUID.randomUUID().toString()
                 // sh 'curl $unique_Id'
              
-sh 'println "Random UUID: "+uuid'
+println "Random UUID: "+uuid
  //               sh 'println "UUID Variant: "+uuid.variant()'
 //sh 'println "UUID Version: "+uuid.version()'
             //    sh 'def verCode =uuid.version()'
